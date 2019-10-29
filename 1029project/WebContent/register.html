@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>회원가입</title>
+</head>
+<body>
+          <form action="register.jsp">
+              <fieldset>
+                  <legend>회원가입</legend>
+                  
+                  <label for="id">아이디</label>
+                  <input type="text"  id="id"  name="id"  
+                    size="20"> 
+                  <input type="button"  id= "idcheck" 
+                  value="중복확인" />
+                  <div id="msg"></div>  
+              <!--  <span id="msg"></span>  -->
+               <!--  div와 span 비교 확인   -->
+                  <br/>
+                  
+                  <script>
+                         document.getElementById("id")
+                         .addEventListener("blur", function(e){
+                        	  if(document.getElementById("id").value == "root"){
+                        		   document.getElementById("msg").innerHTML =
+                        			   "사용 불가능한 아이디 입니다."
+                        		   document.getElementById("msg").style.color='red'	   
+                        	  }
+                         });                        
+                  </script>
+                    
+                  <label for="pw">비밀번호</label>
+                  <input type="password"  id="pw"  name="pw"  
+                    size="20"> <br/> 
+                    
+                  <label for="email">이메일 </label>
+                  <input type="text"  id="email"  name="email" 
+                  size="30"/>@
+                  <select name="corp">
+                      <option value="direct">직접입력</option>
+                      <option value="gmail">gmail.com</option>
+                      <option value="naver">naver.com</option>
+                  </select> 
+                  <br/>
+                  
+                  <label for="gender">성별</label>
+                  <input type="radio"  name="gender"  
+                  checked="checked"  value="man"/>남자 
+                  <input type="radio"  name="gender" 
+                   value="woman"/>여자 
+                  <br/>
+                  
+                  <label for="image">이미지</label>
+                  <input type="file"  name="image"  id="image" 
+                  accept=".gif, .jpg, .png, .jpeg" />
+                  <br/>
+                  
+                  <label for="story">하고 싶은 이야기</label>
+                  <br/>
+                  <textarea rows="10"  cols="40"  name="story"
+                  id="story" ></textarea>
+                  <br/>
+                  
+                  <input type="submit"  value="회원가입" />
+                  <input type="reset"  value="작성취소"  />
+                  <input type= "button"  value="메인으로" 
+                   onclick="location.href='./' " />
+                   
+                   <select size="3"  multiple="multiple">
+                          <option value="1" >1</option>
+                          <option value="2" >2</option>
+                          <option value="3" >3</option>
+                          <option value="4" >4</option>
+                          <option value="5" >5</option>
+                          <option value="6" >6</option>                         
+                   </select>                             
+              </fieldset>
+              
+          </form>
+</body>
+</html>
